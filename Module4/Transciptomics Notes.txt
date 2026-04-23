@@ -1,0 +1,74 @@
+﻿Transcriptomics Notes:
+
+
+Check for quality falco or fastqc
+
+
+Falco
+An alternative, more performant implementation of FastQC for high throughput sequence quality control
+(Galaxy Version 1.2.4+galaxy0)
+
+
+Change: Dataset collection
+
+
+Visualize forward and reverse, download files, describe quality in notes
+Falco webpage
+
+
+Trim with fastP
+Set to paired collection
+fastp
+fast all-in-one preprocessing for FASTQ files
+(Galaxy Version 1.3.1+galaxy0)
+
+
+Look at HTML report for sample, Starting and ending reads
+Why? Quality, too many ns, too short, adapter dimers etc
+
+
+Hisat2, takes raw reads and aligns them to assembled genome you provide
+HISAT2
+A fast and sensitive alignment program
+(Galaxy Version 2.2.2+galaxy0)
+
+
+Needs a reference genome fasta
+Source: genome from history
+Paired end dataset collection, use fastp output
+
+
+Stringtie
+Turns aligned reads into actual transcripts, predicts which transcripts you might have
+Change to dataset collection, hisat 2 aligned reads
+Takes all the short reads, and assembles the transcript using them
+
+
+Stringtie merge dataset collection
+
+
+Gff compare
+Takes assembles transcripts and compares to genome annotation
+Multiple datasets: stringtie merge
+Add gff file
+
+
+Feature counts
+Measures gene expression
+Dataset collection
+Gene annotation file, gff from history
+Does the input had read pairs, paired ends nd count them as a single fragment
+
+
+Download to module 4 and upload these files to github
+1. Notes (this document)
+2. Falco html output
+3. Falco R read
+4. Fastp html
+5. Samples.csv
+
+
+E.g. gitadd module 4
+
+
+Git commit
