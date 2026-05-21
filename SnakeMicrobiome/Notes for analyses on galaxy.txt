@@ -1,0 +1,66 @@
+dada2 plot quality profile
+(Galaxy Version 1.38.0+galaxy0)
+- Paired short read data 
+- Select sequence pairs
+- Default parameters
+
+
+dada2 filter and trim
+(Galaxy Version 1.38.0+galaxy0)
+- Separate filters and trimmers for reverse reads: Yes
+- Trim first 5 of forward and reverse
+- Trim last 15 of forward 
+
+Unzip
+- Forward and Reverse collection
+
+dada2 Learn Errors
+(Galaxy Version 1.38.0+galaxy0)
+- Run on forward and reverse collection individually
+
+dada2 dada
+(Galaxy Version 1.38.0+galaxy0)
+- Run on F and R individually
+- Process samples in batches: Yes
+- Reads: Filter and trim output
+- Error Rates: Learn error rates output for F or R
+
+dada2 mergePairs
+(Galaxy Version 1.38.0+galaxy0)
+- Data results for Reads: dada output
+- Forward Reads: Filter and trim output
+
+dada2 makesequencetable
+(Galaxy Version 1.38.0+galaxy0)
+- Use merge pairs output
+- Plot sequence length distribution: Yes
+
+dada2 removeBimeraDenovo
+(Galaxy Version 1.38.0+galaxy0)
+- Use make sequence table output
+- Method: check samples independently for bimeras and make a consensus decision on each sequence variant
+
+dada2 assign taxonomy
+(Galaxy Version 1.38.0+galaxy0)
+- Select a reference dataset your history or use a built-in?: Builtin
+- Reference dataset: Silva_138
+- Add genus-species binomials to the taxonomic table: Yes
+- Select a reference dataset your history or use a built-in?: Builtin
+- Reference dataset: Silva_138
+- Reporting options: All exactly matched species
+
+Create phyloseq object from a BIOM file
+(Galaxy Version 1.54.0+galaxy0)
+- Select: Assigntaxonomy table, Removebimeras table, and metadata.csv
+
+Phyloseq
+Explore microbiome profiles
+(Galaxy Version 1.0.0)
+- Select phyloseq object
+- Tool will start to run
+- Select interactive tools once notification appears
+- Click "phyloseq object" link, refresh if needed
+- Can navigate visualizations from taskbar
+
+
+
